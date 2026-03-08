@@ -49,18 +49,18 @@ const sampleProducts = [
 
 const seedDB = async () => {
   try {
-    // Step 1: Connect to DB
+    // Connect to DB
     await connectDB();
 
-    // Step 2: Delete existing products
+    // Delete existing products
     await Product.deleteMany();
     console.log("Existing products deleted!");
 
-    // Step 3: Insert sample products
+    // Insert sample products
     await Product.insertMany(sampleProducts);
     console.log("Sample products inserted!");
 
-    // Step 4: Disconnect
+    // Disconnect
     mongoose.disconnect();
     console.log("Database seeded successfully!");
 

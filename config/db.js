@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+// Load environment variables from .env file
 dotenv.config();
+
+// connectDB - Connects to MongoDB using Mongoose
+//  Uses MONGO_URI from .env file
+//  Exits process if connection fails
   const connectDB = async () => {
 
   try {
@@ -12,5 +17,5 @@ dotenv.config();
   }
 };
 
-
+// Export connectDB to use in server.js
 export default connectDB;
